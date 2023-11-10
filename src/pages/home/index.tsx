@@ -6,7 +6,7 @@ import * as Styled from './home.styles'
 const Home: FC = () => {
   return (
     <Styled.Home data-component-name='Home'>
-      <Link to={'/timeline'}>cv</Link>
+      <Link to={'/timeline'}>cv test</Link>
     </Styled.Home>
   )
 }
