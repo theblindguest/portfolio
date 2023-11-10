@@ -19,15 +19,15 @@ const router = createBrowserRouter([
       },
       // other pages....
       {
-        path: '/about',
+        path: 'about',
         element: <About />
       },
       {
-        path: '/timeline',
+        path: 'timeline',
         element: <Timeline />
       },
       {
-        path: '/contact',
+        path: 'contact',
         element: <Contact />
       }
     ]
