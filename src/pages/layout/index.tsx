@@ -34,16 +34,16 @@ const Layout: FC = () => {
       )}
       <GlobalStyle />
       <Styled.OuterContainer
-        data-component-name='Layout'
+        data-component-name="Layout"
         $isDesktop={isDesktop}
       >
         <Styled.InnerContainer>
           <Header />
-          <Styled.Content $isDesktop={isDesktop}>
+          <Styled.ContentMain $isDesktop={isDesktop}>
             <Outlet
               context={{ setModalData, modalData } satisfies OutletContext}
             />
-          </Styled.Content>
+          </Styled.ContentMain>
           <Footer />
         </Styled.InnerContainer>
       </Styled.OuterContainer>

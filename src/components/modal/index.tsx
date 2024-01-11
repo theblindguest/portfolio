@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 
 import * as Styled from './modal.styles'
 
@@ -10,23 +10,29 @@ interface Modal {
 }
 
 const Modal: FC<Modal> = ({ modalData, setModalData }: Modal) => {
-  const { startDate, endDate, heading, subHeading, text, id, image } = modalData
+  const preventBackgroundScroll = (e: WheelEvent): boolean => {
+    e.preventDefault()
+    e.stopPropagation()
+    return false
+  }
+  const element = document.scrollingElement || document.documentElement
+  // @ts-ignore
+  element.addEventListener('wheel', preventBackgroundScroll, { passive: false })
 
-  var element = document.scrollingElement || document.documentElement
-  element.addEventListener(
-    'wheel',
-    (e) => {
-      console.log('document.scrollingElement', document.scrollingElement)
-      e.preventDefault()
-      e.stopPropagation()
-      return false
-    },
-    { passive: false }
-  )
+  useEffect(() => {
+    return () => {
+      // @ts-ignore
+      element.removeEventListener('wheel', preventBackgroundScroll, {
+        passive: false
+      })
+    }
+  }, [])
+
+  const { startDate, endDate, heading, subHeading, text, id, image } = modalData
 
   return (
     <Styled.ModalOverlay
-      data-component-name='Modal'
+      data-component-name="Modal"
       onClick={() => {
         setModalData(undefined)
       }}

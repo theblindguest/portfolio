@@ -44,30 +44,37 @@ const Moment: FC<Moment> = ({
 
   const { setModalData } = useOutletContext<OutletContext>()
 
+  console.log(`is visible id ${id}`, isVisible)
+
   return (
-    <Styled.Moment
-      id={id}
-      data-component-name='Moment'
-      onClick={() =>
-        setModalData({
-          startDate,
-          endDate,
-          heading,
-          subHeading,
-          text,
-          id,
-          image
-        })
-      }
-    >
-      <Styled.Image image={image} />
+    <Styled.Moment>
       <Styled.Dates $isVisible={isVisible}>
-        {startDate} - {endDate}
+        {endDate}
+        <br />/{startDate}
       </Styled.Dates>
-      <Styled.Heading $isVisible={isVisible}>
-        {heading} | {subHeading}
-      </Styled.Heading>
-      <Styled.Text $isVisible={isVisible}>{text}</Styled.Text>
+      <Styled.Content
+        id={id}
+        data-component-name="Content"
+        onClick={() =>
+          setModalData({
+            startDate,
+            endDate,
+            heading,
+            subHeading,
+            text,
+            id,
+            image
+          })
+        }
+      >
+        <Styled.Image image={image} />
+        <Styled.Copy $isVisible={isVisible}>
+          <Styled.Heading>
+            {heading} | {subHeading}
+          </Styled.Heading>
+          <Styled.Text>{text}</Styled.Text>
+        </Styled.Copy>
+      </Styled.Content>
     </Styled.Moment>
   )
 }
