@@ -29,31 +29,36 @@ const Contact: FC = () => {
   const [message, setMessage] = useState('')
 
   return (
-    <Styled.Contact data-component-name='Contact' $isDesktop={isDesktop}>
-      <Styled.Heading>Drop me a message</Styled.Heading>
-      <Styled.Label htmlFor='name'>Name</Styled.Label>
+    <Styled.Contact data-component-name="Contact" isDesktop={isDesktop}>
+      <Styled.Heading isDesktop={isDesktop}>
+        It's good to talk...
+      </Styled.Heading>
+      <Styled.SubHeading>
+        Get in touch if you'd like to work together, or just want to say hello!
+      </Styled.SubHeading>
+      <Styled.Label htmlFor="name">Name</Styled.Label>
       <Styled.Input
-        type='text'
-        id='name'
-        name='name'
+        type="text"
+        id="name"
+        name="name"
         onChange={(e) => setName(e.target.value)}
       />
-      <Styled.Label htmlFor='email'>Email address</Styled.Label>
+      <Styled.Label htmlFor="email">Email address</Styled.Label>
       <Styled.Input
-        type='text'
-        id='email'
-        name='email'
+        type="text"
+        id="email"
+        name="email"
         onChange={(e) => setEmail(e.target.value)}
         onBlur={(e) => validateEmail(e.target.value)}
       />
-      <Styled.Label htmlFor='message'>Message</Styled.Label>
+      <Styled.Label htmlFor="message">Message</Styled.Label>
       <Styled.TextArea
-        id='message'
-        name='message'
+        id="message"
+        name="message"
         onChange={(e) => setMessage(e.target.value)}
       />
       <Styled.Submit
-        type='submit'
+        type="submit"
         onClick={async () => {
           await validateAndSend({ name, email, message })
         }}

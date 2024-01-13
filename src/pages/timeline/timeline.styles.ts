@@ -1,16 +1,21 @@
 import styled, { css } from 'styled-components'
 
-export const Timeline = styled.div(() => {
+export const Timeline = styled.div<{ isDesktopMoment: boolean }>((props) => {
   return css`
     display: flex;
     flex-direction: column;
     height: 100%;
-    max-width: 868px;
+    max-width: 826px;
     width: 100%;
     /* padding bottom to ensure timeline scroll lands nicely at the bottom of the page */
-    padding-bottom: 132px;
+    padding-bottom: 23px;
     scrollbar-color: #a65852 #fbe45b;
     position: relative;
+
+    ${props.isDesktopMoment &&
+    css`
+      padding-bottom: 183px;
+    `}
   `
 })
 
@@ -18,7 +23,7 @@ export const LineMarker = styled.div<{ isDesktopMoment: boolean }>((props) => {
   return css`
     position: sticky;
     top: 20px;
-    width: 68px;
+    width: 50px;
     height: 3px;
     margin-bottom: -3px;
     background-color: #444;
@@ -26,7 +31,7 @@ export const LineMarker = styled.div<{ isDesktopMoment: boolean }>((props) => {
 
     ${props.isDesktopMoment &&
     css`
-      width: 76px;
+      width: 64px;
       margin-left: 9px;
     `}
   `

@@ -1,16 +1,14 @@
 import React, { FC } from 'react'
 
+import { portrait } from '../../assets/theme-light'
+
 import * as Styled from './about.styles'
 
-import getBreakpoints from '../../helpers/responsive'
-
 const About: FC = () => {
-  const { isDesktop } = getBreakpoints()
-
   return (
-    <Styled.About data-component-name='About' $isDesktop={isDesktop}>
-      <Styled.Portrait $isDesktop={isDesktop} />
-      <Styled.Description $isDesktop={isDesktop}>
+    <Styled.About data-component-name="About">
+      <Styled.Portrait src={portrait} />
+      <Styled.Description>
         <div>Hello</div>
         <div>
           I'm Jack Watson, a software engineer from London, England. I say

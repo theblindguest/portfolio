@@ -9,6 +9,10 @@ export const Moment = styled.div<{ isDesktopMoment: boolean }>((props) => {
 
     &:last-child {
       margin-bottom: 0;
+
+      > div:first-child {
+        height: 100%;
+      }
     }
 
     ${props.isDesktopMoment &&
@@ -38,8 +42,8 @@ export const DatesText = styled.div<Props>((props) => {
   return css`
     display: flex;
     justify-content: flex-end;
-    margin-top: 14px;
-    width: 66px;
+    margin-top: 12px;
+    width: 48px;
     font-size: 14px;
     text-align: right;
     font-weight: 900;
@@ -48,7 +52,8 @@ export const DatesText = styled.div<Props>((props) => {
 
     ${props.isDesktopMoment &&
     css`
-      width: 90px;
+      margin-top: 14px;
+      width: 70px;
       font-size: 16px;
     `}
   `
@@ -130,7 +135,7 @@ export const Copy = styled.div<Props>(
     css`
       animation: ${props.isDesktopMoment ? copySlide : copySlideMobile} 600ms
         ease-in-out;
-      animation-delay: ${props.isDesktopMoment ? '150ms' : '450ms'};
+      animation-delay: ${props.isDesktopMoment ? '150ms' : '550ms'};
       animation-fill-mode: forwards;
     `}
   `

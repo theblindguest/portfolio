@@ -41,7 +41,6 @@ const Layout: FC = () => {
               context={{ setModalData, modalData } satisfies OutletContext}
             />
           </Styled.ContentMain>
-          <Footer />
         </Styled.InnerContainer>
       </Styled.OuterContainer>
     </Fragment>

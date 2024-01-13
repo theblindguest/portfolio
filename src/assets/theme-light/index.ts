@@ -5,5 +5,6 @@ import ui from './ui-01.png'
 import architecture from './architecture-01.png'
 import education from './education.png'
 import childhood from './childhood-02.png'
+import portrait from './portrait.png'
 
-export { coding, freelance, ui, architecture, education, childhood }
+export { coding, freelance, ui, architecture, education, childhood, portrait }

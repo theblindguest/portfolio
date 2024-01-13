@@ -23,6 +23,6 @@ export const ContentMain = styled.main(() => {
     height: 100%;
     position: relative;
     padding-top: 30px;
-    padding: 50px 0;
+    padding: 50px 0 0;
   `
 })

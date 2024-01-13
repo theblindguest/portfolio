@@ -1,17 +1,33 @@
 import styled, { css } from 'styled-components'
 
-export const Contact = styled.div<{ $isDesktop?: boolean }>((props) => {
+export const Contact = styled.div<{ isDesktop?: boolean }>((props) => {
   return css`
     display: flex;
     flex-direction: column;
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 640px;
+    width: 100%;
+    margin: -14px auto 0;
   `
 })
 
-export const Heading = styled.div`
+export const Heading = styled.div<{ isDesktop?: boolean }>((props) => {
+  return css`
+    display: flex;
+    margin-bottom: 12px;
+    font-size: 26px;
+    font-weight: 900;
+
+    ${props.isDesktop &&
+    css`
+      margin-bottom: 14px;
+      font-size: 30px;
+    `}
+  `
+})
+
+export const SubHeading = styled.div`
   display: inline-block;
-  margin: 0 auto 30px;
+  margin: 0 0 30px;
 `
 
 export const Label = styled.label`
@@ -31,7 +47,6 @@ export const Input = styled.input<{ $isDesktop?: boolean }>((props) => {
 export const TextArea = styled.textarea<{ $isDesktop?: boolean }>((props) => {
   return css`
     min-height: 120px;
-    max-width: 600px;
     margin-bottom: 20px;
     padding: 10px 15px;
     border-radius: 5px;
