@@ -74,7 +74,7 @@ const Moment: FC<Moment> = ({
         }
       >
         <Styled.Image image={image} isMomentBig={isMomentBig} />
-        <Styled.Copy $isVisible={isVisible}>
+        <Styled.Copy $isVisible={isVisible} isMomentBig={isMomentBig}>
           <Styled.Heading>
             {heading} | {subHeading}
           </Styled.Heading>

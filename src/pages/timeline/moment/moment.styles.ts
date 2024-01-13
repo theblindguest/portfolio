@@ -84,11 +84,23 @@ export const Image = styled.div<{ image: string; isMomentBig: boolean }>(
 
 interface Props {
   $isVisible: boolean
+  isMomentBig: boolean
 }
 
 const copySlide = keyframes`
   from {
     transform: translate(-60px, 0);
+    opacity: 0%;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 100%;
+  }
+`
+
+const copySlideMobile = keyframes`
+  from {
+    transform: translate(0px, -60px);
     opacity: 0%;
   }
   to {
@@ -105,8 +117,9 @@ export const Copy = styled.div<Props>(
 
     ${props.$isVisible &&
     css`
-      animation: ${copySlide} 600ms ease-in-out;
-      animation-delay: 100ms;
+      animation: ${props.isMomentBig ? copySlideMobile : copySlide} 600ms
+        ease-in-out;
+      animation-delay: ${props.isMomentBig ? '500ms' : '150ms'};
       animation-fill-mode: forwards;
     `}
   `
