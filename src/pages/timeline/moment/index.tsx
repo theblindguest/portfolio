@@ -78,7 +78,7 @@ const Moment: FC<Moment> = ({
       >
         <Styled.Image image={image} isDesktopMoment={isDesktopMoment} />
         <Styled.Copy $isVisible={isVisible} isDesktopMoment={isDesktopMoment}>
-          <Styled.Heading>
+          <Styled.Heading isDesktopMoment={isDesktopMoment}>
             {heading} | {subHeading}
           </Styled.Heading>
           <Styled.Text isDesktopMoment={isDesktopMoment}>{text}</Styled.Text>

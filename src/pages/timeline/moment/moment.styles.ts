@@ -4,7 +4,7 @@ export const Moment = styled.div<{ isDesktopMoment: boolean }>((props) => {
   return css`
     display: flex;
     position: relative;
-    height: 370px;
+    height: 375px;
     margin-bottom: 50px;
 
     &:last-child {
@@ -130,7 +130,7 @@ export const Copy = styled.div<Props>(
     css`
       animation: ${props.isDesktopMoment ? copySlide : copySlideMobile} 600ms
         ease-in-out;
-      animation-delay: ${props.isDesktopMoment ? '150ms' : '300ms'};
+      animation-delay: ${props.isDesktopMoment ? '150ms' : '450ms'};
       animation-fill-mode: forwards;
     `}
   `
@@ -140,6 +140,17 @@ export const Heading = styled.div<Props>((props) => {
   return css`
     font-weight: 700;
     margin-top: 10px;
+    font-size: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    ${props.isDesktopMoment &&
+    css`
+      display: block;
+      font-size: 16px;
+    `}
   `
 })
 
