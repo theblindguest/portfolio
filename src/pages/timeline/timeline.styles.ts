@@ -1,46 +1,48 @@
 import styled, { css } from 'styled-components'
 import { Moment } from './moment'
 
-export const Timeline = styled.div<{ $modalData?: Moment }>((props) => {
+export const Timeline = styled.div(() => {
   return css`
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding-bottom: 30px;
+    /* padding bottom to ensure timeline scroll lands nicely at the bottom of the page */
+    padding-bottom: 132px;
     scrollbar-color: #a65852 #fbe45b;
     position: relative;
   `
 })
 
-export const LineContainer = styled.div<{ $modalData?: Moment }>((props) => {
+export const LineMarker = styled.div(() => {
   return css`
-    position: absolute;
-    top: 10px;
-    display: flex;
-    flex-direction: column;
-    left: -30px;
-    width: 20px;
-  `
-})
-
-export const Line = styled.div<{ $modalData?: Moment }>((props) => {
-  return css`
-    position: relative;
-    width: 12px;
+    position: sticky;
+    top: 20px;
+    margin-left: -111px;
+    width: 120px;
     height: 1px;
-    margin-bottom: 11px;
-    background-color: #555;
+    background-color: #7d7d7d;
+    z-index: 2;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -1px;
+      width: 20px;
+      height: 40px;
+      background-color: #fbe45b;
+    }
   `
 })
 
-export const Lines = styled.div<{ $modalData?: Moment }>((props) => {
+export const Lines = styled.div(() => {
   return css`
     position: absolute;
-    height: calc(100% - 270px);
+    height: calc(100% - 130px);
     display: flex;
     flex-direction: column;
-    left: -30px;
     width: 10px;
+    z-index: 1;
 
     background: linear-gradient(
       to bottom,
@@ -53,7 +55,6 @@ export const Lines = styled.div<{ $modalData?: Moment }>((props) => {
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0)
     );
-
     background-size: 100% 8px;
   `
 })

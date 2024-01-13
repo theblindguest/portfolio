@@ -47,11 +47,15 @@ const Moment: FC<Moment> = ({
   console.log(`is visible id ${id}`, isVisible)
 
   return (
-    <Styled.Moment>
-      <Styled.Dates $isVisible={isVisible}>
-        {endDate}
-        <br />/{startDate}
-      </Styled.Dates>
+    <Styled.Moment data-component-name="Moment">
+      <Styled.DatesStickyWrapper>
+        <Styled.DatesSticky>
+          <Styled.DatesText>
+            {endDate}
+            <br />/{startDate}
+          </Styled.DatesText>
+        </Styled.DatesSticky>
+      </Styled.DatesStickyWrapper>
       <Styled.Content
         id={id}
         data-component-name="Content"

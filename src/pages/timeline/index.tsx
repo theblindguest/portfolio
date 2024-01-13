@@ -9,6 +9,7 @@ const Timeline: FC = () => {
   return (
     <>
       <Styled.Timeline data-component-name="Timeline">
+        <Styled.LineMarker />
         <Styled.Lines />
         {moments.map((moment, key) => {
           return <Moment key={key} id={`moment-${key}`} {...moment} />

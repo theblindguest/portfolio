@@ -2,45 +2,41 @@ import styled, { keyframes, css } from 'styled-components'
 
 export const Moment = styled.div`
   display: flex;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
   position: relative;
-  left: -140px;
+  left: -110px;
   width: calc(100% + 140px);
+  height: 280px;
 
   &:last-child {
     margin-bottom: 0;
   }
 `
 
-const dateSlide = keyframes`
-  from {
-    transform: translate(100px, 0);
-    opacity: 0%;
-  }
-  to {
-    transform: translate(0, 0);
-    opacity: 100%;
-  }
+export const DatesStickyWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: calc(100% + 140px);
+  background-color: #fbe45b;
 `
-const animateSpeed = '600ms'
 
-export const Dates = styled.div<Props>(
-  (props) => css`
+export const DatesSticky = styled.div(
+  () => css`
+    position: sticky;
+    top: 21px;
+    padding-right: 50px;
+  `
+)
+
+export const DatesText = styled.div(
+  () => css`
     display: flex;
     justify-content: flex-end;
-    padding-right: 50px;
+    margin-top: 14px;
     min-width: 90px;
     font-size: 24px;
     text-align: right;
     font-weight: 900;
-    opacity: 0%;
-
-    ${props.$isVisible &&
-    css`
-      animation: ${dateSlide} ${animateSpeed} ease-in-out;
-      animation-delay: 100ms;
-      animation-fill-mode: forwards;
-    `}
   `
 )
 
@@ -57,8 +53,7 @@ export const Image = styled.div<{ image: string }>(
   (props) => css`
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    min-width: 350px;
-    min-height: 300px;
+    min-width: 340px;
     z-index: 1;
     overflow: hidden;
     margin: -20px 20px -20px -20px;
@@ -91,7 +86,7 @@ export const Copy = styled.div<Props>(
 
     ${props.$isVisible &&
     css`
-      animation: ${copySlide} ${animateSpeed} ease-in-out;
+      animation: ${copySlide} 600ms ease-in-out;
       animation-delay: 100ms;
       animation-fill-mode: forwards;
     `}
