@@ -1,17 +1,23 @@
 import styled, { keyframes, css } from 'styled-components'
 
-export const Moment = styled.div`
-  display: flex;
-  margin-bottom: 80px;
-  position: relative;
-  left: -110px;
-  width: calc(100% + 140px);
-  height: 280px;
+export const Moment = styled.div<{ isMomentBig: boolean }>((props) => {
+  return css`
+    display: flex;
+    margin-bottom: 80px;
+    position: relative;
+    height: 280px;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
-`
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    ${props.isMomentBig &&
+    css`
+      height: 400px;
+      margin-bottom: 50px;
+    `}
+  `
+})
 
 export const DatesStickyWrapper = styled.div`
   display: flex;
@@ -23,8 +29,8 @@ export const DatesStickyWrapper = styled.div`
 export const DatesSticky = styled.div(
   () => css`
     position: sticky;
-    top: 21px;
-    padding-right: 50px;
+    top: 20px;
+    padding-right: 24px;
   `
 )
 
@@ -33,33 +39,46 @@ export const DatesText = styled.div(
     display: flex;
     justify-content: flex-end;
     margin-top: 14px;
-    min-width: 90px;
-    font-size: 24px;
+    width: 90px;
+    font-size: 16px;
     text-align: right;
     font-weight: 900;
+    text-transform: uppercase;
+    line-height: 20px;
   `
 )
 
-export const Content = styled.div`
-  display: flex;
-  background-color: white;
-  border-radius: 10px;
-  min-width: 380px;
-  padding: 20px;
-  cursor: pointer;
-`
+export const Content = styled.div<{ isMomentBig: boolean }>((props) => {
+  return css`
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    max-width: 600px;
+    padding: 20px;
+    cursor: pointer;
 
-export const Image = styled.div<{ image: string }>(
+    ${props.isMomentBig &&
+    css`
+      flex-direction: column;
+    `}
+  `
+})
+
+export const Image = styled.div<{ image: string; isMomentBig: boolean }>(
   (props) => css`
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    min-width: 340px;
-    z-index: 1;
-    overflow: hidden;
+    border-radius: 10px 0 0 10px;
+    min-width: 60%;
     margin: -20px 20px -20px -20px;
     background-image: url(${props.image});
     background-position: center;
     background-size: cover;
+
+    ${props.isMomentBig &&
+    css`
+      height: 250px;
+      margin: -20px -20px 0px -20px;
+      border-radius: 10px 10px 0 0;
+    `}
   `
 )
 
@@ -105,6 +124,5 @@ export const Text = styled.div(
     margin-top: 10px;
     color: #888;
     font-size: 14px;
-    overflow: hidden;
   `
 )

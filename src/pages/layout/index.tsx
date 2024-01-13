@@ -16,7 +16,7 @@ export interface OutletContext {
 
 const Layout: FC = () => {
   const [modalData, setModalData] = useState<Moment | undefined>(undefined)
-  const { isDesktop } = getBreakpoints()
+  const { tabletDesktopNav } = getBreakpoints()
 
   useEffect(() => {
     addEventListener('keyup', (event) => {
@@ -33,13 +33,10 @@ const Layout: FC = () => {
         <Modal setModalData={setModalData} modalData={{ ...modalData }} />
       )}
       <GlobalStyle />
-      <Styled.OuterContainer
-        data-component-name="Layout"
-        $isDesktop={isDesktop}
-      >
+      <Styled.OuterContainer data-component-name="Layout">
         <Styled.InnerContainer>
-          <Header />
-          <Styled.ContentMain $isDesktop={isDesktop}>
+          <Header tabletDesktopNav={tabletDesktopNav} />
+          <Styled.ContentMain>
             <Outlet
               context={{ setModalData, modalData } satisfies OutletContext}
             />

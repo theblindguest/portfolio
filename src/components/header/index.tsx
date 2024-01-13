@@ -2,11 +2,18 @@ import React, { FC, useState } from 'react'
 
 import * as Styled from './header.styles'
 
-const Header: FC = () => {
+interface HeaderProps {
+  tabletDesktopNav: boolean
+}
+
+const Header: FC<HeaderProps> = ({ tabletDesktopNav }) => {
   const [activeLink, setActiveLink] = useState(document.location.href)
 
   return (
-    <Styled.Header data-component-name='Header'>
+    <Styled.Header
+      data-component-name="Header"
+      $tabletDesktopNav={tabletDesktopNav}
+    >
       <Styled.Name>jack watson</Styled.Name>
       <Styled.Nav>
         <Styled.NavItem

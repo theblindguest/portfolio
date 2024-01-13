@@ -12,6 +12,7 @@ export interface Moment {
   text: string
   id: string
   image: string
+  isMomentBig: boolean
 }
 
 const Moment: FC<Moment> = ({
@@ -21,7 +22,8 @@ const Moment: FC<Moment> = ({
   subHeading,
   text,
   id,
-  image
+  image,
+  isMomentBig
 }: Moment) => {
   const onMomentVisible = (entries: any) => {
     entries.forEach((entry: any) => {
@@ -44,21 +46,20 @@ const Moment: FC<Moment> = ({
 
   const { setModalData } = useOutletContext<OutletContext>()
 
-  console.log(`is visible id ${id}`, isVisible)
-
   return (
-    <Styled.Moment data-component-name="Moment">
+    <Styled.Moment isMomentBig={isMomentBig} data-component-name="Moment">
       <Styled.DatesStickyWrapper>
         <Styled.DatesSticky>
           <Styled.DatesText>
             {endDate}
-            <br />/{startDate}
+            <br />/ {startDate}
           </Styled.DatesText>
         </Styled.DatesSticky>
       </Styled.DatesStickyWrapper>
       <Styled.Content
         id={id}
         data-component-name="Content"
+        isMomentBig={isMomentBig}
         onClick={() =>
           setModalData({
             startDate,
@@ -67,11 +68,12 @@ const Moment: FC<Moment> = ({
             subHeading,
             text,
             id,
-            image
+            image,
+            isMomentBig
           })
         }
       >
-        <Styled.Image image={image} />
+        <Styled.Image image={image} isMomentBig={isMomentBig} />
         <Styled.Copy $isVisible={isVisible}>
           <Styled.Heading>
             {heading} | {subHeading}
