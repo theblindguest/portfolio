@@ -7,16 +7,16 @@ import getBreakpoints from '../../helpers/responsive'
 import * as Styled from './timeline.styles'
 
 const Timeline: FC = () => {
-  const { isMomentBig } = getBreakpoints()
+  const { isDesktopMoment } = getBreakpoints()
 
   return (
     <>
       <Styled.Timeline data-component-name="Timeline">
-        <Styled.LineMarker />
+        <Styled.LineMarker isDesktopMoment={isDesktopMoment} />
         {moments.map((moment, key) => {
           return (
             <Moment
-              isMomentBig={isMomentBig}
+              isDesktopMoment={isDesktopMoment}
               key={key}
               id={`moment-${key}`}
               {...moment}

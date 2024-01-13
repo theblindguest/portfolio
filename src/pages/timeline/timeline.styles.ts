@@ -14,15 +14,20 @@ export const Timeline = styled.div(() => {
   `
 })
 
-export const LineMarker = styled.div(() => {
+export const LineMarker = styled.div<{ isDesktopMoment: boolean }>((props) => {
   return css`
     position: sticky;
     top: 20px;
-    width: 82px;
+    width: 68px;
     height: 3px;
     margin-bottom: -3px;
-    margin-left: 9px;
     background-color: #444;
     z-index: 2;
+
+    ${props.isDesktopMoment &&
+    css`
+      width: 76px;
+      margin-left: 9px;
+    `}
   `
 })

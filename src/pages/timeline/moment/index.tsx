@@ -12,7 +12,7 @@ export interface Moment {
   text: string
   id: string
   image: string
-  isMomentBig: boolean
+  isDesktopMoment: boolean
 }
 
 const Moment: FC<Moment> = ({
@@ -23,7 +23,7 @@ const Moment: FC<Moment> = ({
   text,
   id,
   image,
-  isMomentBig
+  isDesktopMoment
 }: Moment) => {
   const onMomentVisible = (entries: any) => {
     entries.forEach((entry: any) => {
@@ -47,10 +47,13 @@ const Moment: FC<Moment> = ({
   const { setModalData } = useOutletContext<OutletContext>()
 
   return (
-    <Styled.Moment isMomentBig={isMomentBig} data-component-name="Moment">
+    <Styled.Moment
+      isDesktopMoment={isDesktopMoment}
+      data-component-name="Moment"
+    >
       <Styled.DatesStickyWrapper>
         <Styled.DatesSticky>
-          <Styled.DatesText>
+          <Styled.DatesText isDesktopMoment={isDesktopMoment}>
             {endDate}
             <br />/ {startDate}
           </Styled.DatesText>
@@ -59,7 +62,7 @@ const Moment: FC<Moment> = ({
       <Styled.Content
         id={id}
         data-component-name="Content"
-        isMomentBig={isMomentBig}
+        isDesktopMoment={isDesktopMoment}
         onClick={() =>
           setModalData({
             startDate,
@@ -69,16 +72,16 @@ const Moment: FC<Moment> = ({
             text,
             id,
             image,
-            isMomentBig
+            isDesktopMoment
           })
         }
       >
-        <Styled.Image image={image} isMomentBig={isMomentBig} />
-        <Styled.Copy $isVisible={isVisible} isMomentBig={isMomentBig}>
+        <Styled.Image image={image} isDesktopMoment={isDesktopMoment} />
+        <Styled.Copy $isVisible={isVisible} isDesktopMoment={isDesktopMoment}>
           <Styled.Heading>
             {heading} | {subHeading}
           </Styled.Heading>
-          <Styled.Text>{text}</Styled.Text>
+          <Styled.Text isDesktopMoment={isDesktopMoment}>{text}</Styled.Text>
         </Styled.Copy>
       </Styled.Content>
     </Styled.Moment>
