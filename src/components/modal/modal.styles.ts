@@ -22,25 +22,29 @@ export const Modal = styled.div(
     background-color: ${props.theme.colors.backgrounds.modal};
     border-radius: 10px;
     overflow: auto;
-    padding: 30px;
     margin: 30px;
   `
 )
 
-export const Header = styled.div<{ image: string }>(
+export const HeaderBackground = styled.div<{ image: string }>(
   (props) => css`
+    display: flex;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    margin: -30px -30px 0;
-    min-height: 300px;
+    min-height: 270px;
     background: url(${props.image}), rgba(0, 0, 0, 0.4);
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
+  `
+)
+
+export const HeaderText = styled.div(
+  (props) => css`
     display: flex;
     flex-direction: column;
-    padding: 20px 30px;
     justify-content: end;
+    margin: 30px;
   `
 )
 
@@ -59,8 +63,8 @@ export const Heading = styled.div(
 )
 
 export const Text = styled.div`
-  margin-top: 20px;
   line-height: 20px;
+  padding: 30px;
 
   ul {
     li {

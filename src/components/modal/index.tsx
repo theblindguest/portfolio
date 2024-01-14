@@ -10,7 +10,7 @@ interface Modal {
 }
 
 const Modal: FC<Modal> = ({ modalData, setModalData }: Modal) => {
-  const { startDate, endDate, heading, subHeading, text, id, image } = modalData
+  const { startDate, endDate, heading, subHeading, text, image } = modalData
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
@@ -31,14 +31,16 @@ const Modal: FC<Modal> = ({ modalData, setModalData }: Modal) => {
           e.stopPropagation()
         }}
       >
-        <Styled.Header image={image}>
-          <Styled.Heading>
-            {heading} | {subHeading}
-          </Styled.Heading>
-          <Styled.Dates>
-            {startDate} - {endDate}
-          </Styled.Dates>
-        </Styled.Header>
+        <Styled.HeaderBackground image={image}>
+          <Styled.HeaderText>
+            <Styled.Heading>
+              {heading} | {subHeading}
+            </Styled.Heading>
+            <Styled.Dates>
+              {startDate} - {endDate}
+            </Styled.Dates>
+          </Styled.HeaderText>
+        </Styled.HeaderBackground>
         <Styled.Text dangerouslySetInnerHTML={{ __html: text }} />
       </Styled.Modal>
     </Styled.ModalOverlay>

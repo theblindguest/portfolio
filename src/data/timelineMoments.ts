@@ -123,7 +123,7 @@ const moments = [
     startDate: '1986',
     endDate: '2009',
     heading: 'Growing up',
-    subHeading: 'smth',
+    subHeading: '',
     text: `
       <p>
         After years of designing for the web I'd picked up the basics of HTML
