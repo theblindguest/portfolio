@@ -2,7 +2,7 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import { About, Contact, Home, Layout, Timeline } from './pages'
+import { About, Contact, Layout, Timeline } from './pages'
 
 const container = document.getElementById('app-root')!
 const root = createRoot(container)

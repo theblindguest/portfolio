@@ -1,6 +1,6 @@
 import styled, { keyframes, css } from 'styled-components'
 
-export const Moment = styled.div<{ isDesktopMoment: boolean }>((props) => {
+export const Moment = styled.div<{ $isDesktopMoment: boolean }>((props) => {
   return css`
     display: flex;
     position: relative;
@@ -15,7 +15,7 @@ export const Moment = styled.div<{ isDesktopMoment: boolean }>((props) => {
       }
     }
 
-    ${props.isDesktopMoment &&
+    ${props.$isDesktopMoment &&
     css`
       height: 280px;
       margin-bottom: 80px;
@@ -52,7 +52,7 @@ export const DatesText = styled.div<Props>((props) => {
     text-transform: uppercase;
     line-height: 20px;
 
-    ${props.isDesktopMoment &&
+    ${props.$isDesktopMoment &&
     css`
       margin-top: 14px;
       width: 70px;
@@ -61,7 +61,7 @@ export const DatesText = styled.div<Props>((props) => {
   `
 })
 
-export const Content = styled.div<{ isDesktopMoment: boolean }>((props) => {
+export const Content = styled.div<{ $isDesktopMoment: boolean }>((props) => {
   return css`
     display: flex;
     flex-direction: column;
@@ -71,14 +71,14 @@ export const Content = styled.div<{ isDesktopMoment: boolean }>((props) => {
     padding: 20px;
     cursor: pointer;
 
-    ${props.isDesktopMoment &&
+    ${props.$isDesktopMoment &&
     css`
       flex-direction: row;
     `}
   `
 })
 
-export const Image = styled.div<{ image: string; isDesktopMoment: boolean }>(
+export const Image = styled.div<{ image: string; $isDesktopMoment: boolean }>(
   (props) => css`
     min-width: 60%;
     background-image: url(${props.image});
@@ -89,7 +89,7 @@ export const Image = styled.div<{ image: string; isDesktopMoment: boolean }>(
     margin: -20px -20px 0px -20px;
     border-radius: 10px 10px 0 0;
 
-    ${props.isDesktopMoment &&
+    ${props.$isDesktopMoment &&
     css`
       height: auto;
       margin: -20px 20px -20px -20px;
@@ -100,7 +100,7 @@ export const Image = styled.div<{ image: string; isDesktopMoment: boolean }>(
 
 interface Props {
   $isVisible?: boolean
-  isDesktopMoment?: boolean
+  $isDesktopMoment?: boolean
 }
 
 const copySlide = keyframes`
@@ -130,14 +130,12 @@ export const Copy = styled.div<Props>(
     display: flex;
     flex-direction: column;
     opacity: 0%;
-    overflow: auto;
-    -webkit-line-clamp: 4;
 
     ${props.$isVisible &&
     css`
-      animation: ${props.isDesktopMoment ? copySlide : copySlideMobile} 600ms
+      animation: ${props.$isDesktopMoment ? copySlide : copySlideMobile} 600ms
         ease-in-out;
-      animation-delay: ${props.isDesktopMoment ? '150ms' : '250ms'};
+      animation-delay: ${props.$isDesktopMoment ? '150ms' : '250ms'};
       animation-fill-mode: forwards;
     `}
   `
@@ -153,9 +151,10 @@ export const Heading = styled.div<Props>((props) => {
     -webkit-box-orient: vertical;
     overflow: hidden;
 
-    ${props.isDesktopMoment &&
+    ${props.$isDesktopMoment &&
     css`
       display: block;
+      overflow: initial;
       font-size: 16px;
     `}
   `
@@ -163,15 +162,15 @@ export const Heading = styled.div<Props>((props) => {
 
 export const Text = styled.div<Props>((props) => {
   return css`
-    margin-top: 10px;
     color: ${props.theme.colors.text.momentSubtext};
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 20px;
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
 
-    ${props.isDesktopMoment &&
+    ${props.$isDesktopMoment &&
     css`
       display: block;
     `}

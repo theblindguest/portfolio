@@ -29,8 +29,8 @@ const Contact: FC = () => {
   const [message, setMessage] = useState('')
 
   return (
-    <Styled.Contact data-component-name="Contact" isDesktop={isDesktop}>
-      <Styled.Heading isDesktop={isDesktop}>
+    <Styled.Contact data-component-name="Contact" $isDesktop={isDesktop}>
+      <Styled.Heading $isDesktop={isDesktop}>
         It's good to talk...
       </Styled.Heading>
       <Styled.SubHeading>

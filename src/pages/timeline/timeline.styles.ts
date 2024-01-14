@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export const Timeline = styled.div<{ isDesktopMoment: boolean }>((props) => {
+export const Timeline = styled.div<{ $isDesktopMoment: boolean }>((props) => {
   return css`
     display: flex;
     flex-direction: column;
@@ -11,14 +11,14 @@ export const Timeline = styled.div<{ isDesktopMoment: boolean }>((props) => {
     padding-bottom: 23px;
     position: relative;
 
-    ${props.isDesktopMoment &&
+    ${props.$isDesktopMoment &&
     css`
       padding-bottom: 183px;
     `}
   `
 })
 
-export const LineMarker = styled.div<{ isDesktopMoment: boolean }>((props) => {
+export const LineMarker = styled.div<{ $isDesktopMoment: boolean }>((props) => {
   return css`
     position: sticky;
     top: 20px;
@@ -28,7 +28,7 @@ export const LineMarker = styled.div<{ isDesktopMoment: boolean }>((props) => {
     background-color: ${props.theme.colors.text.standard};
     z-index: 2;
 
-    ${props.isDesktopMoment &&
+    ${props.$isDesktopMoment &&
     css`
       width: 64px;
       margin-left: 9px;

@@ -10,7 +10,7 @@ export const Header = styled.div<{ $tabletDesktopNav?: boolean }>((props) => {
   return css`
     display: flex;
     align-self: flex-start;
-    align-items: center;
+    align-items: end;
     max-width: 640px;
     width: 100%;
     margin: 0 auto;
@@ -77,14 +77,14 @@ export const NavItem = styled(Link)<{
 )
 
 interface ModeToggleProps {
-  themeName: ThemeNames
+  $themeName: ThemeNames
 }
 export const ModeToggle = styled.button<ModeToggleProps>((props) => {
   return css`
     margin-left: auto;
     border: none;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url(${props.themeName === 'light' ? day : night});
+    background-image: url(${props.$themeName === 'light' ? day : night});
     background-repeat: no-repeat;
     background-size: 22px 22px;
     background-position: center;

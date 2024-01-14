@@ -42,7 +42,7 @@ const dark: ThemeInterface = {
     backgrounds: {
       standard: '#082032',
       moment: '#2C394B',
-      modal: '#7077A1'
+      modal: '#2C394B'
     },
     text: {
       standard: '#ddd',

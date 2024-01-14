@@ -48,12 +48,12 @@ const Moment: FC<Moment> = ({
 
   return (
     <Styled.Moment
-      isDesktopMoment={isDesktopMoment}
+      $isDesktopMoment={isDesktopMoment}
       data-component-name="Moment"
     >
       <Styled.DatesStickyWrapper>
         <Styled.DatesSticky>
-          <Styled.DatesText isDesktopMoment={isDesktopMoment}>
+          <Styled.DatesText $isDesktopMoment={isDesktopMoment}>
             {endDate}
             <br />/ {startDate}
           </Styled.DatesText>
@@ -61,7 +61,7 @@ const Moment: FC<Moment> = ({
       </Styled.DatesStickyWrapper>
       <Styled.Content
         data-component-name="Content"
-        isDesktopMoment={isDesktopMoment}
+        $isDesktopMoment={isDesktopMoment}
         onClick={() =>
           setModalData({
             startDate,
@@ -75,16 +75,19 @@ const Moment: FC<Moment> = ({
           })
         }
       >
-        <Styled.Image image={image} isDesktopMoment={isDesktopMoment} />
+        <Styled.Image image={image} $isDesktopMoment={isDesktopMoment} />
         <Styled.Copy
           id={id}
           $isVisible={isVisible}
-          isDesktopMoment={isDesktopMoment}
+          $isDesktopMoment={isDesktopMoment}
         >
-          <Styled.Heading isDesktopMoment={isDesktopMoment}>
+          <Styled.Heading $isDesktopMoment={isDesktopMoment}>
             {heading} | {subHeading}
           </Styled.Heading>
-          <Styled.Text isDesktopMoment={isDesktopMoment}>{text}</Styled.Text>
+          <Styled.Text
+            $isDesktopMoment={isDesktopMoment}
+            dangerouslySetInnerHTML={{ __html: text }}
+          />
         </Styled.Copy>
       </Styled.Content>
     </Styled.Moment>

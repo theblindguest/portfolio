@@ -12,10 +12,10 @@ const Timeline: FC = () => {
   return (
     <>
       <Styled.Timeline
-        isDesktopMoment={isDesktopMoment}
+        $isDesktopMoment={isDesktopMoment}
         data-component-name="Timeline"
       >
-        <Styled.LineMarker isDesktopMoment={isDesktopMoment} />
+        <Styled.LineMarker $isDesktopMoment={isDesktopMoment} />
         {moments.map((moment, key) => {
           return (
             <Moment

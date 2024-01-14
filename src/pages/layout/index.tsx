@@ -17,17 +17,16 @@ export interface OutletContext {
 
 const Layout: FC = () => {
   const [modalData, setModalData] = useState<Moment | undefined>(undefined)
-  const [themeName, setThemeName] = useState<ThemeNames>('light')
+  const [themeName, setThemeName] = useState<ThemeNames>('dark')
   const { tabletDesktopNav } = getBreakpoints()
 
   useEffect(() => {
     addEventListener('keyup', (event) => {
       if (event.keyCode === 27) {
-        console.log('keyup')
         setModalData(undefined)
       }
     })
-  })
+  }, [])
 
   return (
     <Theme themeName={themeName}>

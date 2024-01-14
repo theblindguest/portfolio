@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export const Contact = styled.div<{ isDesktop?: boolean }>((props) => {
+export const Contact = styled.div<{ $isDesktop?: boolean }>((props) => {
   return css`
     display: flex;
     flex-direction: column;
@@ -10,14 +10,14 @@ export const Contact = styled.div<{ isDesktop?: boolean }>((props) => {
   `
 })
 
-export const Heading = styled.div<{ isDesktop?: boolean }>((props) => {
+export const Heading = styled.div<{ $isDesktop?: boolean }>((props) => {
   return css`
     display: flex;
     margin-bottom: 12px;
     font-size: 26px;
     font-weight: 900;
 
-    ${props.isDesktop &&
+    ${props.$isDesktop &&
     css`
       margin-bottom: 14px;
       font-size: 30px;

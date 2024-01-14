@@ -1,9 +1,8 @@
-import React, { ChangeEvent, FC, useState } from 'react'
+import React, { FC, useState } from 'react'
 
 import * as Styled from './header.styles'
 
 import { ThemeNames } from '../../styles/themes'
-import { Palette } from '../../assets'
 
 interface HeaderProps {
   tabletDesktopNav: boolean
@@ -54,7 +53,7 @@ const Header: FC<HeaderProps> = ({
           </Styled.NavItem>
         </Styled.Nav>
       </Styled.NavContainer>
-      <Styled.ModeToggle onClick={onModeToggle} themeName={themeName} />
+      <Styled.ModeToggle onClick={onModeToggle} $themeName={themeName} />
     </Styled.Header>
   )
 }

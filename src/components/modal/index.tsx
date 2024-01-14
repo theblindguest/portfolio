@@ -10,25 +10,14 @@ interface Modal {
 }
 
 const Modal: FC<Modal> = ({ modalData, setModalData }: Modal) => {
-  const preventBackgroundScroll = (e: WheelEvent): boolean => {
-    e.preventDefault()
-    e.stopPropagation()
-    return false
-  }
-  const element = document.scrollingElement || document.documentElement
-  // @ts-ignore
-  element.addEventListener('wheel', preventBackgroundScroll, { passive: false })
+  const { startDate, endDate, heading, subHeading, text, id, image } = modalData
 
   useEffect(() => {
+    document.body.style.overflow = 'hidden'
     return () => {
-      // @ts-ignore
-      element.removeEventListener('wheel', preventBackgroundScroll, {
-        passive: false
-      })
+      document.body.style.overflow = 'unset'
     }
   }, [])
-
-  const { startDate, endDate, heading, subHeading, text, id, image } = modalData
 
   return (
     <Styled.ModalOverlay
@@ -50,7 +39,7 @@ const Modal: FC<Modal> = ({ modalData, setModalData }: Modal) => {
             {startDate} - {endDate}
           </Styled.Dates>
         </Styled.Header>
-        <Styled.Text>{text}</Styled.Text>
+        <Styled.Text dangerouslySetInnerHTML={{ __html: text }} />
       </Styled.Modal>
     </Styled.ModalOverlay>
   )

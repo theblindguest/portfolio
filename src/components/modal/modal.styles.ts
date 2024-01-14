@@ -16,13 +16,13 @@ export const Modal = styled.div(
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 700px;
-    height: 550px;
+    max-width: 600px;
+    max-height: 550px;
     z-index: 10;
     background-color: ${props.theme.colors.backgrounds.modal};
     border-radius: 10px;
     overflow: auto;
-    padding: 60px;
+    padding: 30px;
     margin: 30px;
   `
 )
@@ -31,15 +31,15 @@ export const Header = styled.div<{ image: string }>(
   (props) => css`
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    margin: -60px -60px 0;
-    height: 300px;
+    margin: -30px -30px 0;
+    min-height: 300px;
     background: url(${props.image}), rgba(0, 0, 0, 0.4);
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
     display: flex;
     flex-direction: column;
-    padding: 20px 60px;
+    padding: 20px 30px;
     justify-content: end;
   `
 )
@@ -60,4 +60,11 @@ export const Heading = styled.div(
 
 export const Text = styled.div`
   margin-top: 20px;
+  line-height: 20px;
+
+  ul {
+    li {
+      margin-bottom: 8px;
+    }
+  }
 `
