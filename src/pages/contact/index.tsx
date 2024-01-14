@@ -17,7 +17,7 @@ interface Validate {
 const validateAndSend = async ({ name, email, message }: Validate) => {
   console.log('validating')
   console.log('name', name)
-  console.log('email', email)
+  console.log('emails', email)
   console.log('message', message)
 }
 
