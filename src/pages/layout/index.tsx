@@ -1,13 +1,14 @@
-import React, { FC, Fragment, useState, useEffect } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 
-import { Header, Footer, Modal } from '../../components'
+import { Header, Modal } from '../../components'
 import GlobalStyle from '../../styles/globalStyles'
+import getBreakpoints from '../../helpers/responsive'
 
 import * as Styled from './layout.styles'
 
+import Theme, { ThemeNames } from '../../styles/themes'
 import { Moment } from '../timeline/moment'
-import getBreakpoints from '../../helpers/responsive'
 
 export interface OutletContext {
   setModalData: React.Dispatch<React.SetStateAction<Moment | undefined>>
@@ -16,6 +17,7 @@ export interface OutletContext {
 
 const Layout: FC = () => {
   const [modalData, setModalData] = useState<Moment | undefined>(undefined)
+  const [themeName, setThemeName] = useState<ThemeNames>('light')
   const { tabletDesktopNav } = getBreakpoints()
 
   useEffect(() => {
@@ -28,14 +30,18 @@ const Layout: FC = () => {
   })
 
   return (
-    <Fragment>
+    <Theme themeName={themeName}>
+      <GlobalStyle $themeName={themeName} />
       {modalData && (
         <Modal setModalData={setModalData} modalData={{ ...modalData }} />
       )}
-      <GlobalStyle />
       <Styled.OuterContainer data-component-name="Layout">
         <Styled.InnerContainer>
-          <Header tabletDesktopNav={tabletDesktopNav} />
+          <Header
+            setThemeName={setThemeName}
+            themeName={themeName}
+            tabletDesktopNav={tabletDesktopNav}
+          />
           <Styled.ContentMain>
             <Outlet
               context={{ setModalData, modalData } satisfies OutletContext}
@@ -43,7 +49,7 @@ const Layout: FC = () => {
           </Styled.ContentMain>
         </Styled.InnerContainer>
       </Styled.OuterContainer>
-    </Fragment>
+    </Theme>
   )
 }
 

@@ -60,6 +60,6 @@ export const Submit = styled.button<{ $isDesktop?: boolean }>((props) => {
     cursor: pointer;
     height: 44px;
     border: none;
-    background-color: #a6d0c8;
+    background-color: ${props.theme.colors.cta};
   `
 })

@@ -60,7 +60,6 @@ const Moment: FC<Moment> = ({
         </Styled.DatesSticky>
       </Styled.DatesStickyWrapper>
       <Styled.Content
-        id={id}
         data-component-name="Content"
         isDesktopMoment={isDesktopMoment}
         onClick={() =>
@@ -77,7 +76,11 @@ const Moment: FC<Moment> = ({
         }
       >
         <Styled.Image image={image} isDesktopMoment={isDesktopMoment} />
-        <Styled.Copy $isVisible={isVisible} isDesktopMoment={isDesktopMoment}>
+        <Styled.Copy
+          id={id}
+          $isVisible={isVisible}
+          isDesktopMoment={isDesktopMoment}
+        >
           <Styled.Heading isDesktopMoment={isDesktopMoment}>
             {heading} | {subHeading}
           </Styled.Heading>

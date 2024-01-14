@@ -1,26 +1,35 @@
 import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
 
+import day from '../../assets/icons/day.svg'
+import night from '../../assets/icons/night.svg'
+
+import { ThemeNames } from '../../styles/themes'
+
 export const Header = styled.div<{ $tabletDesktopNav?: boolean }>((props) => {
   return css`
     display: flex;
-    flex-direction: column;
     align-self: flex-start;
+    align-items: center;
     max-width: 640px;
     width: 100%;
     margin: 0 auto;
-
-    /* ${props.$tabletDesktopNav &&
-    css`
-      margin: 0 auto;
-    `} */
   `
 })
 
-export const Name = styled.div`
-  font-weight: 700;
-  color: #a65852;
-`
+export const NavContainer = styled.div((props) => {
+  return css`
+    display: flex;
+    flex-direction: column;
+  `
+})
+
+export const Name = styled.div((props) => {
+  return css`
+    font-weight: 700;
+    color: ${props.theme.colors.text.siteName};
+  `
+})
 
 export const Nav = styled.div`
   display: flex;
@@ -59,10 +68,32 @@ export const NavItem = styled(Link)<{
     ${props.$isActive &&
     css`
       &::after {
-        background-color: rgba(166, 208, 200, 1);
+        background-color: ${props.theme.colors.text.underline};
         top: 4px;
         transition: all 200ms ease-in-out;
       }
     `}
   `
 )
+
+interface ModeToggleProps {
+  themeName: ThemeNames
+}
+export const ModeToggle = styled.button<ModeToggleProps>((props) => {
+  return css`
+    margin-left: auto;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url(${props.themeName === 'light' ? day : night});
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  `
+})
+
+export const Option = styled.option((props) => {
+  return css``
+})

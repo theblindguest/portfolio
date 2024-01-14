@@ -8,7 +8,7 @@
     "strict": true,
     "sourceMap": true,
     "target": "ES6",
-    "typeRoots": ["./types", "./node_modules/@types"]
+    "typeRoots": ["./types", "./node_modules/@types", "./declarations.d.ts"]
   },
   "exclude": ["node_modules"]
 }

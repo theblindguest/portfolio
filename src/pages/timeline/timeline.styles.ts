@@ -9,7 +9,6 @@ export const Timeline = styled.div<{ isDesktopMoment: boolean }>((props) => {
     width: 100%;
     /* padding bottom to ensure timeline scroll lands nicely at the bottom of the page */
     padding-bottom: 23px;
-    scrollbar-color: #a65852 #fbe45b;
     position: relative;
 
     ${props.isDesktopMoment &&
@@ -26,7 +25,7 @@ export const LineMarker = styled.div<{ isDesktopMoment: boolean }>((props) => {
     width: 50px;
     height: 3px;
     margin-bottom: -3px;
-    background-color: #444;
+    background-color: ${props.theme.colors.text.standard};
     z-index: 2;
 
     ${props.isDesktopMoment &&

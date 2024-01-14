@@ -23,12 +23,14 @@ export const Moment = styled.div<{ isDesktopMoment: boolean }>((props) => {
   `
 })
 
-export const DatesStickyWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: calc(100% + 140px);
-  background-color: #fbe45b;
-`
+export const DatesStickyWrapper = styled.div(
+  (props) => css`
+    display: flex;
+    flex-direction: column;
+    height: calc(100% + 140px);
+    background-color: ${props.theme.colors.backgrounds.standard};
+  `
+)
 
 export const DatesSticky = styled.div(
   () => css`
@@ -63,7 +65,7 @@ export const Content = styled.div<{ isDesktopMoment: boolean }>((props) => {
   return css`
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: ${props.theme.colors.backgrounds.moment};
     border-radius: 10px;
     max-width: 600px;
     padding: 20px;
@@ -135,7 +137,7 @@ export const Copy = styled.div<Props>(
     css`
       animation: ${props.isDesktopMoment ? copySlide : copySlideMobile} 600ms
         ease-in-out;
-      animation-delay: ${props.isDesktopMoment ? '150ms' : '550ms'};
+      animation-delay: ${props.isDesktopMoment ? '150ms' : '250ms'};
       animation-fill-mode: forwards;
     `}
   `
@@ -162,7 +164,7 @@ export const Heading = styled.div<Props>((props) => {
 export const Text = styled.div<Props>((props) => {
   return css`
     margin-top: 10px;
-    color: #888;
+    color: ${props.theme.colors.text.momentSubtext};
     font-size: 14px;
     display: -webkit-box;
     -webkit-line-clamp: 4;

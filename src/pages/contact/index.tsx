@@ -34,7 +34,7 @@ const Contact: FC = () => {
         It's good to talk...
       </Styled.Heading>
       <Styled.SubHeading>
-        Get in touch if you'd like to work together, or just want to say hello!
+        Get in touch if you'd like to work together, or just want to say hello.
       </Styled.SubHeading>
       <Styled.Label htmlFor="name">Name</Styled.Label>
       <Styled.Input

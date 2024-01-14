@@ -11,19 +11,21 @@ export const ModalOverlay = styled.div`
   align-items: center;
 `
 
-export const Modal = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 700px;
-  height: 550px;
-  z-index: 10;
-  background-color: #fff;
-  border-radius: 10px;
-  overflow: auto;
-  padding: 60px;
-  margin: 30px;
-`
+export const Modal = styled.div(
+  (props) => css`
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 700px;
+    height: 550px;
+    z-index: 10;
+    background-color: ${props.theme.colors.backgrounds.modal};
+    border-radius: 10px;
+    overflow: auto;
+    padding: 60px;
+    margin: 30px;
+  `
+)
 
 export const Header = styled.div<{ image: string }>(
   (props) => css`
@@ -42,15 +44,19 @@ export const Header = styled.div<{ image: string }>(
   `
 )
 
-export const Dates = styled.div`
-  color: #fff;
-`
+export const Dates = styled.div(
+  (props) => css`
+    color: ${props.theme.colors.text.modalImageText};
+  `
+)
 
-export const Heading = styled.div`
-  color: #fff;
-  font-weight: 700;
-  font-size: 30px;
-`
+export const Heading = styled.div(
+  (props) => css`
+    color: ${props.theme.colors.text.modalImageText};
+    font-weight: 700;
+    font-size: 30px;
+  `
+)
 
 export const Text = styled.div`
   margin-top: 20px;
