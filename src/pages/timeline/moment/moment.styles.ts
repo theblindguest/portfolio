@@ -23,13 +23,19 @@ export const Moment = styled.div<{ $isDesktopMoment: boolean }>((props) => {
   `
 })
 
-export const DatesStickyWrapper = styled.div(
-  (props) => css`
-    display: flex;
-    flex-direction: column;
-    height: calc(100% + 140px);
-    background-color: ${props.theme.colors.backgrounds.standard};
-  `
+export const DatesStickyWrapper = styled.div<{ $isDesktopMoment: boolean }>(
+  (props) =>
+    css`
+      display: flex;
+      flex-direction: column;
+      background-color: ${props.theme.colors.backgrounds.standard};
+      margin-bottom: -101px;
+
+      ${props.$isDesktopMoment &&
+      css`
+        margin-bottom: -134px;
+      `}
+    `
 )
 
 export const DatesSticky = styled.div(

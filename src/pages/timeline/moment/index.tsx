@@ -51,7 +51,7 @@ const Moment: FC<Moment> = ({
       $isDesktopMoment={isDesktopMoment}
       data-component-name="Moment"
     >
-      <Styled.DatesStickyWrapper>
+      <Styled.DatesStickyWrapper $isDesktopMoment={isDesktopMoment}>
         <Styled.DatesSticky>
           <Styled.DatesText $isDesktopMoment={isDesktopMoment}>
             {endDate}
