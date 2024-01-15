@@ -28,6 +28,15 @@ export const LineMarker = styled.div<{ $isDesktopMoment: boolean }>((props) => {
     background-color: ${props.theme.colors.text.standard};
     z-index: 2;
 
+    &::after {
+      content: '';
+      width: 100%;
+      height: 20px;
+      position: absolute;
+      top: -20px;
+      background-color: ${props.theme.colors.backgrounds.standard};
+    }
+
     ${props.$isDesktopMoment &&
     css`
       width: 64px;

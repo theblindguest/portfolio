@@ -29,12 +29,12 @@ export const DatesStickyWrapper = styled.div<{ $isDesktopMoment: boolean }>(
       display: flex;
       flex-direction: column;
       background-color: ${props.theme.colors.backgrounds.standard};
-      margin-bottom: -101px;
+      /* margin-bottom: -101px; */
 
-      ${props.$isDesktopMoment &&
+      /* ${props.$isDesktopMoment &&
       css`
         margin-bottom: -134px;
-      `}
+      `} */
     `
 )
 
