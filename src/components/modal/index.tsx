@@ -41,7 +41,7 @@ const Modal: FC<Modal> = ({ modalData, setModalData }: Modal) => {
             </Styled.Dates>
           </Styled.HeaderText>
         </Styled.HeaderBackground>
-        <Styled.Text dangerouslySetInnerHTML={{ __html: text }} />
+        <Styled.Text>{text(100)}</Styled.Text>
       </Styled.Modal>
     </Styled.ModalOverlay>
   )

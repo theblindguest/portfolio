@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, ReactNode, useEffect, useState } from 'react'
 import { useOutletContext } from 'react-router-dom'
 
 import * as Styled from './moment.styles'
@@ -9,7 +9,7 @@ export interface Moment {
   endDate: string
   heading: string
   subHeading: string
-  text: string
+  text: (clamp: number) => ReactNode
   id: string
   image: string
   isDesktopMoment: boolean
@@ -82,12 +82,13 @@ const Moment: FC<Moment> = ({
           $isDesktopMoment={isDesktopMoment}
         >
           <Styled.Heading $isDesktopMoment={isDesktopMoment}>
-            {heading} | {subHeading}
+            {heading}
           </Styled.Heading>
-          <Styled.Text
-            $isDesktopMoment={isDesktopMoment}
-            dangerouslySetInnerHTML={{ __html: text }}
-          />
+          <Styled.SubHeading>{subHeading}</Styled.SubHeading>
+          <Styled.Text $isDesktopMoment={isDesktopMoment}>
+            {text(isDesktopMoment ? 7 : 5)}
+          </Styled.Text>
+          <Styled.ReadMore>{`read more`}</Styled.ReadMore>
         </Styled.Copy>
       </Styled.Content>
     </Styled.Moment>

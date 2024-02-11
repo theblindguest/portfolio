@@ -4,7 +4,7 @@ export const Moment = styled.div<{ $isDesktopMoment: boolean }>((props) => {
   return css`
     display: flex;
     position: relative;
-    height: 375px;
+    height: 400px;
     margin-bottom: 50px;
 
     &:last-child {
@@ -76,6 +76,7 @@ export const Content = styled.div<{ $isDesktopMoment: boolean }>((props) => {
     max-width: 600px;
     padding: 20px;
     cursor: pointer;
+    width: 100%;
 
     ${props.$isDesktopMoment &&
     css`
@@ -86,7 +87,6 @@ export const Content = styled.div<{ $isDesktopMoment: boolean }>((props) => {
 
 export const Image = styled.div<{ image: string; $isDesktopMoment: boolean }>(
   (props) => css`
-    min-width: 60%;
     background-image: url(${props.image});
     background-position: center;
     background-size: cover;
@@ -97,6 +97,7 @@ export const Image = styled.div<{ image: string; $isDesktopMoment: boolean }>(
 
     ${props.$isDesktopMoment &&
     css`
+      width: 100%;
       height: auto;
       margin: -20px 20px -20px -20px;
       border-radius: 10px 0 0 10px;
@@ -136,6 +137,7 @@ export const Copy = styled.div<Props>(
     display: flex;
     flex-direction: column;
     opacity: 0%;
+    margin-top: 10px;
 
     ${props.$isVisible &&
     css`
@@ -144,6 +146,25 @@ export const Copy = styled.div<Props>(
       animation-delay: ${props.$isDesktopMoment ? '150ms' : '250ms'};
       animation-fill-mode: forwards;
     `}
+
+    ${props.$isDesktopMoment &&
+    css`
+      max-width: 220px;
+      width: 100%;
+      margin-top: 0;
+    `} /* ::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 30px;
+      -webkit-box-shadow: 0px -2px 30px 0px ${props.theme.colors.backgrounds
+      .moment};
+      -moz-box-shadow: 0px -2px 30px 0px ${props.theme.colors.backgrounds
+      .moment};
+      box-shadow: 0px -2px 30px 0px ${props.theme.colors.backgrounds.moment};
+    } */
   `
 )
 
@@ -151,17 +172,26 @@ export const Heading = styled.div<Props>((props) => {
   return css`
     font-weight: 700;
     margin-top: 10px;
-    font-size: 15px;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    font-size: 16px;
 
     ${props.$isDesktopMoment &&
     css`
       display: block;
       overflow: initial;
-      font-size: 16px;
+    `}
+  `
+})
+
+export const SubHeading = styled.div<Props>((props) => {
+  return css`
+    font-weight: 700;
+    margin-top: 8px;
+    font-size: 14px;
+
+    ${props.$isDesktopMoment &&
+    css`
+      display: block;
+      overflow: initial;
     `}
   `
 })
@@ -169,16 +199,24 @@ export const Heading = styled.div<Props>((props) => {
 export const Text = styled.div<Props>((props) => {
   return css`
     color: ${props.theme.colors.text.momentSubtext};
-    font-size: 15px;
+    font-size: 14px;
     line-height: 20px;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
+    height: 114px;
     overflow: hidden;
 
     ${props.$isDesktopMoment &&
     css`
-      display: block;
+      height: 152px;
     `}
+  `
+})
+
+export const ReadMore = styled.div<Props>((props) => {
+  return css`
+    color: ${props.theme.colors.cta};
+    font-size: 15px;
+    line-height: 20px;
+    padding-top: 8px;
+    margin-top: auto;
   `
 })

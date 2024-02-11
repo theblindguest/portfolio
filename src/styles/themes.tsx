@@ -7,6 +7,7 @@ interface ThemeInterface {
       standard: string
       moment: string
       modal: string
+      modalBackdrop: string
     }
     text: {
       standard: string
@@ -14,6 +15,7 @@ interface ThemeInterface {
       siteName: string
       underline: string
       modalImageText: string
+      modalText: string
     }
     cta: string
   }
@@ -42,14 +44,16 @@ const dark: ThemeInterface = {
     backgrounds: {
       standard: '#082032',
       moment: '#2C394B',
-      modal: '#082032'
+      modal: '#f3f3f3',
+      modalBackdrop: '#082032'
     },
     text: {
       standard: '#ddd',
-      momentSubtext: '#c2c9e5',
+      momentSubtext: '#ddd',
       siteName: '#FF4C29',
       underline: '#FF4C29',
-      modalImageText: '#fff'
+      modalImageText: '#fff',
+      modalText: '#2C394B'
     },
     cta: '#FF4C29'
   }
@@ -60,14 +64,16 @@ const light: ThemeInterface = {
     backgrounds: {
       standard: '#fbe45b',
       moment: '#fff',
-      modal: '#fff'
+      modal: '#fff',
+      modalBackdrop: '#fbe45b'
     },
     text: {
       standard: '#444',
       momentSubtext: '#888',
       siteName: '#a65852',
       underline: 'rgba(166, 208, 200, 1)',
-      modalImageText: '#fff'
+      modalImageText: '#fff',
+      modalText: '#444'
     },
     cta: '#a6d0c8'
   }

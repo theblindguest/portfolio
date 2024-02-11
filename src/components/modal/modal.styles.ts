@@ -1,15 +1,18 @@
 import styled, { css } from 'styled-components'
 
-export const ModalOverlay = styled.div`
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
+export const ModalOverlay = styled.div(
+  (props) =>
+    css`
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: ${props.theme.colors.backgrounds.modalBackdrop};
+      z-index: 5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    `
+)
 
 export const Modal = styled.div(
   (props) => css`
@@ -62,13 +65,16 @@ export const Heading = styled.div(
   `
 )
 
-export const Text = styled.div`
-  line-height: 20px;
-  padding: 30px;
+export const Text = styled.div((props) => {
+  return css`
+    line-height: 20px;
+    padding: 30px;
+    color: ${props.theme.colors.text.modalText};
 
-  ul {
-    li {
-      margin-bottom: 8px;
+    ul {
+      li {
+        margin-bottom: 8px;
+      }
     }
-  }
-`
+  `
+})
