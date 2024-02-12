@@ -43,14 +43,16 @@ const Modal: FC<Modal> = ({ modalData, setModalData }: Modal) => {
           </Styled.HeaderText>
         </Styled.HeaderBackground>
         <Styled.Text>{text(100)}</Styled.Text>
-        <Styled.ImagesContainer>
-          {images!.map((image) => (
-            <Styled.ImageContainer>
-              <Styled.Image src={image.src} />
-              <Styled.ImageCaption>{image.caption}</Styled.ImageCaption>
-            </Styled.ImageContainer>
-          ))}
-        </Styled.ImagesContainer>
+        {images?.length && (
+          <Styled.ImagesContainer>
+            {images.map((image) => (
+              <Styled.ImageContainer>
+                <Styled.Image src={image.src} />
+                <Styled.ImageCaption>{image.caption}</Styled.ImageCaption>
+              </Styled.ImageContainer>
+            ))}
+          </Styled.ImagesContainer>
+        )}
       </Styled.Modal>
     </Styled.ModalOverlay>
   )

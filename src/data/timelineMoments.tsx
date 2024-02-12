@@ -78,7 +78,8 @@ const moments = [
         </ul>
       </>
     ),
-    image: coding
+    image: coding,
+    images: []
   },
   {
     startDate: '2016',
@@ -89,34 +90,14 @@ const moments = [
       <>
         <Dotdotdot clamp={clamp}>
           <p>
-            After years of designing for the web I'd picked up the basics of
-            HTML and CSS, and the more I learned the more I enjoyed toying
-            around and building things.
+            I spent a couple of years working freelance as a digital designer as
+            it gave me the opportunity to experience a wide range of projects,
+            including a contract I had for a startup called VenueScanner -
+            redesigning their homepage as well as product details pages and
+            customer messaging centre.
           </p>
         </Dotdotdot>
-        <p>
-          Since joining Vodafone I have built on this foundation, working across
-          multiple projects including the shop journeys, building the UK's
-          internal component library from the ground up, and migrating the
-          marketing CMS from WCS to Contentful.
-        </p>
-        <p>I'm now competent with the following technologies:</p>
-        <ul>
-          <li>React</li>
-          <li>Typescript</li>
-          <li>Nodejs</li>
-          <li>Sass</li>
-          <li>Styled Components</li>
-        </ul>
-        <p>As part of my day to day work I...</p>
-        <ul>
-          <li>Enable new features and content to be created in the CMS</li>
-          <li>Create new and update existing components</li>
-          <li>Write and maintain unit and integration tests</li>
-          <li>Release and test new code to the production environment</li>
-          <li>Help write and refine stories</li>
-          <li>Mentor a junior developer</li>
-        </ul>
+        <p></p>
       </>
     ),
     image: freelance,
