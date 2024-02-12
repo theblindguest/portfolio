@@ -6,9 +6,35 @@ import {
   freelance,
   ui,
   architecture,
-  education,
-  childhood
+  education
 } from '../assets/theme-light/index'
+
+import images from '../assets/moment-images'
+const {
+  buchanan01,
+  buchanan02,
+  buchanan03,
+  reed01,
+  reed02,
+  reed03,
+  renders01,
+  renders02,
+  renders03,
+  renders04,
+  renders05,
+  renders06,
+  ui01,
+  ui02,
+  ui03,
+  ui04,
+  ui05,
+  uni01,
+  uni02,
+  uni03,
+  uni04,
+  uni05,
+  uni06
+} = images
 
 const moments = [
   {
@@ -93,7 +119,14 @@ const moments = [
         </ul>
       </>
     ),
-    image: freelance
+    image: freelance,
+    images: [
+      { src: ui01, caption: '' },
+      { src: ui02, caption: '' },
+      { src: ui03, caption: '' },
+      { src: ui04, caption: '' },
+      { src: ui05, caption: '' }
+    ]
   },
   {
     startDate: '2015',
@@ -116,7 +149,12 @@ const moments = [
         </p>
       </>
     ),
-    image: ui
+    image: ui,
+    images: [
+      { src: reed01, caption: '' },
+      { src: reed02, caption: '' },
+      { src: reed03, caption: '' }
+    ]
   },
   {
     startDate: '2012',
@@ -128,8 +166,8 @@ const moments = [
         <Dotdotdot clamp={clamp}>
           <p>
             After leaving Buchanans I had one foot still in the architectural
-            world and one foot in the digital world, as I used the software I
-            had learned through my degree and my year in practice to work
+            world and one foot in the digital world. I used the software I had
+            learned throughout my degree and my year in practice to work
             freelance as a 3D designer. I worked with individuals and small
             businesses to turn drawings, sketches, and ideas into 3D models
             which could be used to generate images for marketing material,
@@ -138,7 +176,15 @@ const moments = [
         </Dotdotdot>
       </>
     ),
-    image: freelance
+    image: freelance,
+    images: [
+      { src: renders01, caption: '' },
+      { src: renders02, caption: '' },
+      { src: renders03, caption: '' },
+      { src: renders04, caption: '' },
+      { src: renders05, caption: '' },
+      { src: renders06, caption: '' }
+    ]
   },
   {
     startDate: '2011',
@@ -165,7 +211,12 @@ const moments = [
         </p>
       </>
     ),
-    image: architecture
+    image: architecture,
+    images: [
+      { src: buchanan01, caption: '' },
+      { src: buchanan02, caption: '' },
+      { src: buchanan03, caption: '' }
+    ]
   },
   {
     startDate: '2009',
@@ -210,22 +261,16 @@ const moments = [
         </p>
       </>
     ),
-    image: education
+    image: education,
+    images: [
+      { src: uni01, caption: '' },
+      { src: uni02, caption: '' },
+      { src: uni03, caption: '' },
+      { src: uni04, caption: '' },
+      { src: uni05, caption: '' },
+      { src: uni06, caption: '' }
+    ]
   }
-  // {
-  //   startDate: '1986',
-  //   endDate: '2009',
-  //   heading: 'Growing up',
-  //   subHeading: '',
-  //   text: `
-  //     <p>
-  //       After years of designing for the web I'd picked up the basics of HTML
-  //       and CSS, and the more I learned the more I enjoyed toying around and
-  //       building things. Since joining Vodafone I have built upon that knowledge
-  //     </p>
-  //   `,
-  //   image: childhood
-  // }
 ]
 
 export default moments

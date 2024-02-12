@@ -13,6 +13,11 @@ export interface Moment {
   id: string
   image: string
   isDesktopMoment: boolean
+  images?: {
+    src: string
+    caption: string
+  }[]
+  tldr?: string
 }
 
 const Moment: FC<Moment> = ({
@@ -23,7 +28,9 @@ const Moment: FC<Moment> = ({
   text,
   id,
   image,
-  isDesktopMoment
+  isDesktopMoment,
+  images,
+  tldr
 }: Moment) => {
   const onMomentVisible = (entries: any) => {
     entries.forEach((entry: any) => {
@@ -71,7 +78,9 @@ const Moment: FC<Moment> = ({
             text,
             id,
             image,
-            isDesktopMoment
+            isDesktopMoment,
+            images,
+            tldr
           })
         }
       >

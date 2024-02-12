@@ -78,3 +78,30 @@ export const Text = styled.div((props) => {
     }
   `
 })
+
+export const Image = styled.img(
+  (props) => css`
+    width: 100%;
+    margin-bottom: 5px;
+  `
+)
+
+export const ImageCaption = styled.div((props) => {
+  return css``
+})
+
+export const ImagesContainer = styled.div((props) => {
+  return css`
+    padding: 0 30px;
+
+    div:last-child {
+      margin-bottom: 0px;
+    }
+  `
+})
+
+export const ImageContainer = styled.div((props) => {
+  return css`
+    padding-bottom: 20px;
+  `
+})
