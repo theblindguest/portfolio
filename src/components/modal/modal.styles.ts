@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+import close from '../../assets/icons/close.svg'
+
 export const ModalOverlay = styled.div(
   (props) =>
     css`
@@ -19,7 +21,7 @@ export const Modal = styled.div(
     display: flex;
     flex-direction: column;
     position: relative;
-    max-width: 600px;
+    max-width: 610px;
     max-height: 550px;
     z-index: 10;
     background-color: ${props.theme.colors.backgrounds.modal};
@@ -41,6 +43,21 @@ export const HeaderBackground = styled.div<{ image: string }>(
     background-blend-mode: multiply;
   `
 )
+
+export const CloseButton = styled.button`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(${close});
+  background-repeat: no-repeat;
+  background-size: 28px 28px;
+  background-position: center;
+  cursor: pointer;
+`
 
 export const HeaderText = styled.div(
   (props) => css`

@@ -11,7 +11,7 @@ export const Header = styled.div<{ $tabletDesktopNav?: boolean }>((props) => {
     display: flex;
     align-self: flex-start;
     align-items: end;
-    max-width: 640px;
+    max-width: ${props.theme.sizing.maxWidth};
     width: 100%;
     margin: 0 auto;
   `
@@ -83,12 +83,13 @@ export const ModeToggle = styled.button<ModeToggleProps>((props) => {
   return css`
     margin-left: auto;
     border: none;
+    padding: 0;
     background-color: rgba(0, 0, 0, 0);
     background-image: url(${props.$themeName === 'light' ? day : night});
     background-repeat: no-repeat;
     background-size: 22px 22px;
     background-position: center;
-    width: 40px;
+    width: 24px;
     height: 40px;
     cursor: pointer;
   `

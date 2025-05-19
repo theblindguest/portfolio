@@ -1,4 +1,6 @@
 import React, { FC, useEffect } from 'react'
+import { useWindowSize } from 'react-use'
+import Confetti from 'react-confetti'
 
 import * as Styled from './modal.styles'
 
@@ -9,9 +11,36 @@ interface Modal {
   setModalData: React.Dispatch<React.SetStateAction<Moment | undefined>>
 }
 
+const confettiColours = [
+  '#f44336',
+  '#e91e63',
+  '#9c27b0',
+  '#673ab7',
+  '#3f51b5',
+  '#2196f3',
+  '#03a9f4',
+  '#00bcd4',
+  '#009688',
+  '#4CAF50',
+  '#8BC34A',
+  '#CDDC39',
+  '#FFEB3B',
+  '#FFC107',
+  '#FF9800',
+  '#FF5722'
+]
+
 const Modal: FC<Modal> = ({ modalData, setModalData }: Modal) => {
-  const { startDate, endDate, heading, subHeading, text, image, images } =
-    modalData
+  const {
+    startDate,
+    endDate,
+    heading,
+    subHeading,
+    text,
+    image,
+    images,
+    isShiny
+  } = modalData
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
@@ -20,6 +49,8 @@ const Modal: FC<Modal> = ({ modalData, setModalData }: Modal) => {
     }
   }, [])
 
+  const { width, height } = useWindowSize()
+
   return (
     <Styled.ModalOverlay
       data-component-name="Modal"
@@ -27,12 +58,21 @@ const Modal: FC<Modal> = ({ modalData, setModalData }: Modal) => {
         setModalData(undefined)
       }}
     >
+      {isShiny ? (
+        <Confetti
+          numberOfPieces={500}
+          colors={confettiColours}
+          width={width}
+          height={height}
+        />
+      ) : null}
       <Styled.Modal
         onClick={(e) => {
           e.stopPropagation()
         }}
       >
-        <Styled.HeaderBackground image={image}>
+        <Styled.HeaderBackground image={image.desktop}>
+          <Styled.CloseButton onClick={() => setModalData(undefined)} />
           <Styled.HeaderText>
             <Styled.Heading>
               {heading} | {subHeading}

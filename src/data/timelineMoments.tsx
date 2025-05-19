@@ -14,9 +14,14 @@ const {
   buchanan01,
   buchanan02,
   buchanan03,
+  shelter01,
+  shelter02,
+  shelterDesktop,
   reed01,
   reed02,
   reed03,
+  reedMobile,
+  reedDesktop,
   renders01,
   renders02,
   renders03,
@@ -33,13 +38,129 @@ const {
   uni03,
   uni04,
   uni05,
-  uni06
+  uni06,
+  vodafone01,
+  vodafone02,
+  vodafone03,
+  vodafoneDesktop,
+  web501,
+  web502,
+  web5Desktop
 } = images
 
 const moments = [
   {
+    startDate: '2024',
+    endDate: 'Present',
+    heading: 'Shelter',
+    subHeading: 'Software Developer',
+    text: (clamp: number) => (
+      <>
+        <Dotdotdot clamp={clamp}>
+          <p>
+            After 6 years cutting my teeth and honing my Front End skills at
+            Vodafone it felt like time to broaden my horizons and get some
+            experience working on a different project. I knew I wanted to work
+            on something more meaningful, and when I saw that Shelter was hiring
+            I jumped at the chance.
+          </p>
+        </Dotdotdot>
+        <p>
+          Shelter's tech stack is similar to the projects I've worked on at
+          Vodafone, with the exception of using Gatsby/graphql for static site
+          generation. That familiarity meant I was able to hit the ground
+          running and contribute to the codebase quickly. At the same time, the
+          shift in team size and organisational structure has offered valuable
+          new learning opportunities, allowing me to adapt to different ways of
+          working and further broaden my skill set.
+        </p>
+        <p>Some of the things I've worked on so far include...</p>
+        <ul>
+          <li>Upgrading forms</li>
+          <li>
+            Using nx caching in the pipelines where we build and publish our
+            contentful apps to reduce the build time from ~20 mins to 1 min
+          </li>
+        </ul>
+      </>
+    ),
+    image: {
+      desktop: shelterDesktop,
+      mobile: shelter01
+    },
+    images: []
+  },
+  {
+    startDate: 'Jan 2024',
+    endDate: '',
+    heading: 'TBD Web5 Hackathon',
+    subHeading: 'Prize Winner',
+    text: (clamp: number) => (
+      <>
+        <Dotdotdot clamp={clamp}>
+          <p>
+            In 2024 I entered my first hackathon with a pet project I'd been
+            working on to record images and notes taken while travelling, called
+            Tracks. I ended up winning the category for Best Personal Data
+            Inspired App with approx. £2000 prize money and some swag from the
+            Jack Dorsey-backed organisers of the competion,{' '}
+            <a href="https://tbd.website/">TBD</a>.
+          </p>
+        </Dotdotdot>
+        <p>
+          Tracks is a travel documenting app that allows users to pin places
+          they've been to on a world map and record their memories via notes and
+          photos. The idea came to me after the realisation that over my
+          lifetime, particularly in my formative
+          (pre-everything-being-saved-to-the-cloud) years, I've lost countless
+          photos and memories of my travels. This is less of an issue now that
+          our photos get backed-up without us lifting a finger, however I still
+          believed there was a much richer digital experience for viewing and
+          sharing our travel history just waiting to be built. So I built one.
+        </p>
+        <p>
+          I'd worked on Tracks on and off for a few years - initially using it
+          as a playground for becoming a better developer. In it's first
+          iteration it used Google Firebase for user authentication and storage.
+          However, ever since Google decided to abandon their "Don't be evil"
+          motto, the thought of people storing their most treasured and personal
+          moments on the platform didn't sit well with me.
+        </p>
+        <p>
+          Fortunately around the same time I was aware that TBD, a startup that
+          was building the foundations of a{' '}
+          <a href="https://identity.foundation/">decentralised web</a>, was
+          running a hackathon for developers creating decentralised apps. The
+          TLDR of decentralised apps is that the user has full control over
+          their data, and if they decide to leave one service for another,
+          migrating their data is a simple process. So I spent some time
+          learning about the APIs TBD were building, replaced Firebase with
+          their authorisation (DID) and storage (DWN) implementations and
+          entered the competition.
+        </p>
+        <p>
+          Winning the Best Personal Data Inspired App was a huge validating
+          moment for me as a developer. It showed that I could take an idea and
+          turn it into a fully functioning app with a nascent piece of tech at
+          its core. One of the things that drove me to become a developer was
+          that I was capable of conceiving of and designing digital experiences,
+          but I wasn't able to build them without relying on others. Being able
+          to incorporate both things by myself is an empowering feeling, and to
+          have that ability recognised in a competition with a healthy prize
+          pool and strong competition was great.
+        </p>
+      </>
+    ),
+    image: {
+      desktop: web5Desktop,
+      mobile: web502
+    },
+    images: [],
+    isShiny: true
+  },
+  {
     startDate: '2018',
-    endDate: 'Today',
+    endDate: '2024',
     heading: 'Vodafone',
     subHeading: 'Software Developer',
     text: (clamp: number) => (
@@ -78,7 +199,10 @@ const moments = [
         </ul>
       </>
     ),
-    image: coding,
+    image: {
+      desktop: vodafoneDesktop,
+      mobile: vodafone02
+    },
     images: []
   },
   {
@@ -100,7 +224,10 @@ const moments = [
         <p></p>
       </>
     ),
-    image: freelance,
+    image: {
+      desktop: freelance,
+      mobile: freelance
+    },
     images: [
       { src: ui01, caption: '' },
       { src: ui02, caption: '' },
@@ -130,7 +257,10 @@ const moments = [
         </p>
       </>
     ),
-    image: ui,
+    image: {
+      desktop: reedDesktop,
+      mobile: reedMobile
+    },
     images: [
       { src: reed01, caption: '' },
       { src: reed02, caption: '' },
@@ -157,7 +287,10 @@ const moments = [
         </Dotdotdot>
       </>
     ),
-    image: freelance,
+    image: {
+      desktop: freelance,
+      mobile: freelance
+    },
     images: [
       { src: renders01, caption: '' },
       { src: renders02, caption: '' },
@@ -192,7 +325,10 @@ const moments = [
         </p>
       </>
     ),
-    image: architecture,
+    image: {
+      desktop: architecture,
+      mobile: architecture
+    },
     images: [
       { src: buchanan01, caption: '' },
       { src: buchanan02, caption: '' },
@@ -242,7 +378,10 @@ const moments = [
         </p>
       </>
     ),
-    image: education,
+    image: {
+      desktop: education,
+      mobile: education
+    },
     images: [
       { src: uni01, caption: '' },
       { src: uni02, caption: '' },

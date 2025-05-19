@@ -19,6 +19,9 @@ interface ThemeInterface {
     }
     cta: string
   }
+  sizing: {
+    maxWidth: string
+  }
 }
 
 // const light: ThemeInterface = {
@@ -39,6 +42,8 @@ interface ThemeInterface {
 //   }
 // }
 
+const MAX_WIDTH = '700px'
+
 const dark: ThemeInterface = {
   colors: {
     backgrounds: {
@@ -56,6 +61,9 @@ const dark: ThemeInterface = {
       modalText: '#2C394B'
     },
     cta: '#FF4C29'
+  },
+  sizing: {
+    maxWidth: MAX_WIDTH
   }
 }
 
@@ -76,6 +84,9 @@ const light: ThemeInterface = {
       modalText: '#444'
     },
     cta: '#a6d0c8'
+  },
+  sizing: {
+    maxWidth: MAX_WIDTH
   }
 }
 

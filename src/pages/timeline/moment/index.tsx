@@ -11,13 +11,17 @@ export interface Moment {
   subHeading: string
   text: (clamp: number) => ReactNode
   id: string
-  image: string
+  image: {
+    desktop: string
+    mobile: string
+  }
   isDesktopMoment: boolean
   images?: {
     src: string
     caption: string
   }[]
   tldr?: string
+  isShiny?: boolean
 }
 
 const Moment: FC<Moment> = ({
@@ -30,7 +34,8 @@ const Moment: FC<Moment> = ({
   image,
   isDesktopMoment,
   images,
-  tldr
+  tldr,
+  isShiny
 }: Moment) => {
   const onMomentVisible = (entries: any) => {
     entries.forEach((entry: any) => {
@@ -60,46 +65,71 @@ const Moment: FC<Moment> = ({
     >
       <Styled.DatesStickyWrapper $isDesktopMoment={isDesktopMoment}>
         <Styled.DatesSticky>
-          <Styled.DatesText $isDesktopMoment={isDesktopMoment}>
+          <Styled.DatesText>
             {endDate}
-            <br />/ {startDate}
+            {endDate && (
+              <>
+                <br /> {`/ `}
+              </>
+            )}
+            {startDate}
           </Styled.DatesText>
         </Styled.DatesSticky>
       </Styled.DatesStickyWrapper>
-      <Styled.Content
-        data-component-name="Content"
-        $isDesktopMoment={isDesktopMoment}
-        onClick={() =>
-          setModalData({
-            startDate,
-            endDate,
-            heading,
-            subHeading,
-            text,
-            id,
-            image,
-            isDesktopMoment,
-            images,
-            tldr
-          })
-        }
-      >
-        <Styled.Image image={image} $isDesktopMoment={isDesktopMoment} />
-        <Styled.Copy
-          id={id}
-          $isVisible={isVisible}
+      <Styled.ContentWrapper>
+        <Styled.Content
+          data-component-name="Content"
           $isDesktopMoment={isDesktopMoment}
+          onClick={() =>
+            setModalData({
+              startDate,
+              endDate,
+              heading,
+              subHeading,
+              text,
+              id,
+              image,
+              isDesktopMoment,
+              images,
+              tldr,
+              isShiny
+            })
+          }
         >
-          <Styled.Heading $isDesktopMoment={isDesktopMoment}>
-            {heading}
-          </Styled.Heading>
-          <Styled.SubHeading>{subHeading}</Styled.SubHeading>
-          <Styled.Text $isDesktopMoment={isDesktopMoment}>
-            {text(isDesktopMoment ? 7 : 5)}
-          </Styled.Text>
-          <Styled.ReadMore>{`read more`}</Styled.ReadMore>
-        </Styled.Copy>
-      </Styled.Content>
+          <Styled.Image
+            image={isDesktopMoment ? image.desktop : image.mobile}
+            $isDesktopMoment={isDesktopMoment}
+          />
+          <Styled.Copy
+            id={id}
+            $isVisible={isVisible}
+            $isDesktopMoment={isDesktopMoment}
+          >
+            <Styled.Heading $isDesktopMoment={isDesktopMoment}>
+              {heading}
+            </Styled.Heading>
+            <Styled.SubHeading>{subHeading}</Styled.SubHeading>
+            <Styled.Text $isDesktopMoment={isDesktopMoment}>
+              {text(isDesktopMoment ? 7 : 5)}
+            </Styled.Text>
+            <Styled.ReadMore>{`read more`}</Styled.ReadMore>
+          </Styled.Copy>
+          {/* {isShiny ? (
+            <Styled.Shine>
+              <Styled.ShineBlur
+                $isDesktopMoment={isDesktopMoment}
+                pathLength={100}
+                rx={10}
+              />
+              <Styled.ShineLine
+                $isDesktopMoment={isDesktopMoment}
+                pathLength={100}
+                rx={10}
+              />
+            </Styled.Shine>
+          ) : null} */}
+        </Styled.Content>
+      </Styled.ContentWrapper>
     </Styled.Moment>
   )
 }

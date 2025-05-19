@@ -4,7 +4,7 @@ export const Contact = styled.div<{ $isDesktop?: boolean }>((props) => {
   return css`
     display: flex;
     flex-direction: column;
-    max-width: 640px;
+    max-width: ${props.theme.sizing.maxWidth};
     width: 100%;
     margin: -14px auto 0;
   `

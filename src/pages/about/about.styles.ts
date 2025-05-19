@@ -6,7 +6,7 @@ export const About = styled.div<{ $isDesktopAbout: boolean }>((props) => {
     flex-direction: column;
     align-items: center;
     height: 100%;
-    max-width: 640px;
+    max-width: ${props.theme.sizing.maxWidth};
     width: 100%;
 
     ${props.$isDesktopAbout &&
