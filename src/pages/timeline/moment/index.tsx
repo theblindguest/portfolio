@@ -59,10 +59,7 @@ const Moment: FC<Moment> = ({
   const { setModalData } = useOutletContext<OutletContext>()
 
   return (
-    <Styled.Moment
-      $isDesktopMoment={isDesktopMoment}
-      data-component-name="Moment"
-    >
+    <Styled.Moment $isDesktopMoment={isDesktopMoment} data-component-name="Moment">
       <Styled.DatesStickyWrapper $isDesktopMoment={isDesktopMoment}>
         <Styled.DatesSticky>
           <Styled.DatesText>
@@ -100,34 +97,14 @@ const Moment: FC<Moment> = ({
             image={isDesktopMoment ? image.desktop : image.mobile}
             $isDesktopMoment={isDesktopMoment}
           />
-          <Styled.Copy
-            id={id}
-            $isVisible={isVisible}
-            $isDesktopMoment={isDesktopMoment}
-          >
-            <Styled.Heading $isDesktopMoment={isDesktopMoment}>
-              {heading}
-            </Styled.Heading>
+          <Styled.Copy id={id} $isVisible={isVisible} $isDesktopMoment={isDesktopMoment}>
+            <Styled.Heading $isDesktopMoment={isDesktopMoment}>{heading}</Styled.Heading>
             <Styled.SubHeading>{subHeading}</Styled.SubHeading>
             <Styled.Text $isDesktopMoment={isDesktopMoment}>
               {text(isDesktopMoment ? 7 : 5)}
             </Styled.Text>
             <Styled.ReadMore>{`read more`}</Styled.ReadMore>
           </Styled.Copy>
-          {/* {isShiny ? (
-            <Styled.Shine>
-              <Styled.ShineBlur
-                $isDesktopMoment={isDesktopMoment}
-                pathLength={100}
-                rx={10}
-              />
-              <Styled.ShineLine
-                $isDesktopMoment={isDesktopMoment}
-                pathLength={100}
-                rx={10}
-              />
-            </Styled.Shine>
-          ) : null} */}
         </Styled.Content>
       </Styled.ContentWrapper>
     </Styled.Moment>
