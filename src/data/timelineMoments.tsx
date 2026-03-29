@@ -1,5 +1,4 @@
 import React from 'react'
-import Dotdotdot from 'react-dotdotdot'
 
 import {
   coding,
@@ -56,7 +55,7 @@ const moments = [
     subHeading: 'Software Developer',
     text: (clamp: number) => (
       <>
-        <Dotdotdot clamp={clamp}>
+        <div style={{ overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: clamp, WebkitBoxOrient: 'vertical' }}>
           <p>
             After 6 years cutting my teeth and honing my Front End skills at
             Vodafone it felt like time to broaden my horizons and get some
@@ -64,7 +63,7 @@ const moments = [
             on something more meaningful, and when I saw that Shelter was hiring
             I jumped at the chance.
           </p>
-        </Dotdotdot>
+        </div>
         <p>
           Shelter's tech stack is similar to the projects I've worked on at
           Vodafone, with the exception of using Gatsby/graphql for static site
@@ -97,7 +96,7 @@ const moments = [
     subHeading: 'Prize Winner',
     text: (clamp: number) => (
       <>
-        <Dotdotdot clamp={clamp}>
+        <div style={{ overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: clamp, WebkitBoxOrient: 'vertical' }}>
           <p>
             In 2024 I entered my first hackathon with a pet project I'd been
             working on to record images and notes taken while travelling, called
@@ -106,7 +105,7 @@ const moments = [
             Jack Dorsey-backed organisers of the competion,{' '}
             <a href="https://tbd.website/">TBD</a>.
           </p>
-        </Dotdotdot>
+        </div>
         <p>
           Tracks is a travel documenting app that allows users to pin places
           they've been to on a world map and record their memories via notes and
@@ -165,7 +164,7 @@ const moments = [
     subHeading: 'Software Developer',
     text: (clamp: number) => (
       <>
-        <Dotdotdot clamp={clamp}>
+        <div style={{ overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: clamp, WebkitBoxOrient: 'vertical' }}>
           <p>
             After years designing for the web I'd picked up the basics of HTML
             and CSS, and the more I learned the more I enjoyed toying around and
@@ -173,7 +172,7 @@ const moments = [
             then, and slowly developing the ability to be able to turn my own
             designs into living breathing pages and apps felt very empowering.
           </p>
-        </Dotdotdot>
+        </div>
         <p>
           Since joining Vodafone I have built on this foundation, working across
           multiple projects including the shop journeys, building the UK's
@@ -212,7 +211,7 @@ const moments = [
     subHeading: 'UX/UI Designer',
     text: (clamp: number) => (
       <>
-        <Dotdotdot clamp={clamp}>
+        <div style={{ overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: clamp, WebkitBoxOrient: 'vertical' }}>
           <p>
             I spent a couple of years working freelance as a digital designer as
             it gave me the opportunity to experience a wide range of projects,
@@ -220,7 +219,7 @@ const moments = [
             redesigning their homepage as well as product details pages and
             customer messaging centre.
           </p>
-        </Dotdotdot>
+        </div>
         <p></p>
       </>
     ),
@@ -243,13 +242,13 @@ const moments = [
     subHeading: 'UI designer',
     text: (clamp: number) => (
       <>
-        <Dotdotdot clamp={clamp}>
+        <div style={{ overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: clamp, WebkitBoxOrient: 'vertical' }}>
           <p>
             At Reed I was part of a small team of UX designers whose task it was
             to create layouts and journeys for internal tooling interfaces used
             by recruiters.
           </p>
-        </Dotdotdot>
+        </div>
         <p>
           I was also responsible for creating assets for use in marketing
           campaigns, working closely with the marketing team and adhering to
@@ -274,7 +273,7 @@ const moments = [
     subHeading: '3D Designer',
     text: (clamp: number) => (
       <>
-        <Dotdotdot clamp={clamp}>
+        <div style={{ overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: clamp, WebkitBoxOrient: 'vertical' }}>
           <p>
             After leaving Buchanans I had one foot still in the architectural
             world and one foot in the digital world. I used the software I had
@@ -284,7 +283,7 @@ const moments = [
             which could be used to generate images for marketing material,
             concept art, and help with planning permissions.
           </p>
-        </Dotdotdot>
+        </div>
       </>
     ),
     image: {
@@ -307,7 +306,7 @@ const moments = [
     subHeading: 'Assistant Architect',
     text: (clamp: number) => (
       <>
-        <Dotdotdot clamp={clamp}>
+        <div style={{ overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: clamp, WebkitBoxOrient: 'vertical' }}>
           <p>
             As part for becoming a qualified architect it's a requirement to do
             a year in practice between finishing your BA and starting the
@@ -315,7 +314,7 @@ const moments = [
             distance I felt it would be good experience to work in a different
             practice, and joined a small architecture firm called Buchanans.
           </p>
-        </Dotdotdot>
+        </div>
         <p>
           They specialised in hotel projects - both new build and refurbs, and
           as an Assistant Architect (assistant to the architect*), I spend a lot
@@ -349,7 +348,7 @@ const moments = [
     `,
     text: (clamp: number) => (
       <>
-        <Dotdotdot clamp={clamp}>
+        <div style={{ overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: clamp, WebkitBoxOrient: 'vertical' }}>
           <p>
             Prior to going to university I had been working as a junior model
             maker at London based architecture practice RMJM. I loved the hands
@@ -361,7 +360,7 @@ const moments = [
             alongside the architects to see how they used the models to inform
             design decisions.
           </p>
-        </Dotdotdot>
+        </div>
         <p>
           I met lots of people at RMJM who had recently completed their part one
           (architecture bachelors degree), and was encouraged to join the

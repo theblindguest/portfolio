@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import { ThemeProvider } from 'styled-components'
 
-interface ThemeInterface {
+export interface ThemeInterface {
   colors: {
     backgrounds: {
       standard: string
